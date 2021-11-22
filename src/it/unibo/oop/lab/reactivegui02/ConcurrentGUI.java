@@ -20,7 +20,7 @@ public class ConcurrentGUI extends JFrame {
     private static final double WIDTH_PERC = 0.2;
     private static final double HEIGHT_PERC = 0.1;
 
-    private volatile int counter;
+    private int counter;
 
     private final static int WAIT_TIME = 100;
 
