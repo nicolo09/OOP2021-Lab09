@@ -20,25 +20,26 @@ public class ConcurrentGUI extends JFrame {
     private static final double WIDTH_PERC = 0.2;
     private static final double HEIGHT_PERC = 0.1;
 
-    private volatile int counter = 0;
-    private final JLabel display = new JLabel(Integer.toString(counter));
-    private final JButton up = new JButton("up");
-    private final JButton down = new JButton("down");
-    private final JButton stop = new JButton("stop");
+    private volatile int counter;
+
     private final static int WAIT_TIME = 100;
 
     ConcurrentGUI() {
+
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize((int) (screenSize.getWidth() * WIDTH_PERC), (int) (screenSize.getHeight() * HEIGHT_PERC));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         final JPanel panel = new JPanel();
+        final JLabel display = new JLabel(Integer.toString(counter));
+        final JButton up = new JButton("up");
+        final JButton down = new JButton("down");
+        final JButton stop = new JButton("stop");
         panel.add(display);
         panel.add(up);
         panel.add(down);
         panel.add(stop);
         this.getContentPane().add(panel);
         this.setVisible(true);
-
         // Multi thread counter
         final Agent agent = new Agent();
         new Thread(agent).start();
