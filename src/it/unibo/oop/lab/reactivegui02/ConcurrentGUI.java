@@ -24,13 +24,15 @@ public class ConcurrentGUI extends JFrame {
 
     private final static int WAIT_TIME = 100;
 
+    private final JLabel display;
+
     ConcurrentGUI() {
 
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize((int) (screenSize.getWidth() * WIDTH_PERC), (int) (screenSize.getHeight() * HEIGHT_PERC));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         final JPanel panel = new JPanel();
-        final JLabel display = new JLabel(Integer.toString(counter));
+        display = new JLabel(Integer.toString(counter));
         final JButton up = new JButton("up");
         final JButton down = new JButton("down");
         final JButton stop = new JButton("stop");
