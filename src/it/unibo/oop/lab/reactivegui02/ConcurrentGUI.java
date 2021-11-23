@@ -22,7 +22,7 @@ public class ConcurrentGUI extends JFrame {
 
     private int counter;
 
-    private final static int WAIT_TIME = 100;
+    private static final int WAIT_TIME = 100;
 
     private final JLabel display;
 

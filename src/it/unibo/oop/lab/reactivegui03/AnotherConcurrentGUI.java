@@ -22,12 +22,12 @@ public class AnotherConcurrentGUI extends JFrame {
 
     private int counter;
 
-    private final static int WAIT_TIME = 100;
+    private static final int WAIT_TIME = 100;
 
     private final JLabel display;
-    final JButton stop;
-    final JButton down;
-    final JButton up;
+    private final JButton stop;
+    private final JButton down;
+    private final JButton up;
 
     AnotherConcurrentGUI() {
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -137,14 +137,23 @@ public class AnotherConcurrentGUI extends JFrame {
 
         }
 
+        /**
+         * Changes the counter to downward. 
+         */
         public void countDownward() {
             down = true;
         }
 
+        /**
+         * Changes the counter to upward. 
+         */
         public void countUpward() {
             down = false;
         }
 
+        /**
+         * Stops the counter and disables the buttons.
+         */
         public void stopCounting() {
             stop = true;
         }
