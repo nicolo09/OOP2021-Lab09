@@ -14,6 +14,10 @@ import javax.swing.SwingUtilities;
 
 //import it.unibo.oop.lab.reactivegui01.ConcurrentGUI.Agent;
 
+/**
+ * Models a counter that can go upward or downward.
+ *
+ */
 public class ConcurrentGUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -101,6 +105,10 @@ public class ConcurrentGUI extends JFrame {
         });
     }
 
+    /**
+     * Models a thread which manage a counter.
+     *
+     */
     public class Agent implements Runnable {
         private boolean down;
         private boolean stop;
@@ -133,14 +141,23 @@ public class ConcurrentGUI extends JFrame {
 
         }
 
+        /**
+         * Makes the counter go downward.
+         */
         public void countDownward() {
             down = true;
         }
 
+        /**
+         * Makes the counter go upward.
+         */
         public void countUpward() {
             down = false;
         }
 
+        /**
+         * Stops the counter.
+         */
         public void stopCounting() {
             stop = true;
         }

@@ -13,7 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 //import it.unibo.oop.lab.reactivegui01.ConcurrentGUI.Agent;
-
+/**
+ * Models a counter that goes upward or downward and stops after 10 seconds.
+ * 
+ */
 public class AnotherConcurrentGUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -105,6 +108,10 @@ public class AnotherConcurrentGUI extends JFrame {
         });
     }
 
+    /**
+     * Models a thread which manage a counter.
+     *
+     */
     public class Agent implements Runnable {
         private boolean down;
         private boolean stop;
@@ -160,6 +167,10 @@ public class AnotherConcurrentGUI extends JFrame {
 
     }
 
+    /**
+     * Stops the counter after 10 seconds.
+     *
+     */
     public class Agent2 implements Runnable {
 
         private static final long TIME_TO_STOP = 10_000;
