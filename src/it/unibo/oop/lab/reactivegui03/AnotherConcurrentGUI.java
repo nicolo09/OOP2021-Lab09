@@ -179,8 +179,15 @@ public class AnotherConcurrentGUI extends JFrame {
         public void run() {
             try {
                 Thread.sleep(TIME_TO_STOP);
-                AnotherConcurrentGUI.this.stop.doClick();
-            } catch (InterruptedException e) {
+                SwingUtilities.invokeAndWait(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        stop.doClick();
+                    }
+
+                });
+            } catch (InterruptedException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
